@@ -14,7 +14,29 @@ const Header = () => {
                         <span className="logo3">X</span>
                     </Link>
                 </div>
+                
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="">Login</Link>
+                        </li>
+
+                        <li>
+                            <Link to="">Cadastrar</Link>
+                        </li>
+
+                        <li>
+                            <Link to="" className="button">Poste um anuncio</Link>
+                        </li>
+
+                    </ul>
+                </nav>
+            
+            
             </div>
+
+            
+
         </HeaderArea>
     </>)
 }
