@@ -1,0 +1,6 @@
+Bibliotecas instaladas :
+npm start
+
+npm install redux react-redux --save
+npm install react-router-dom --save
+npm install styled-components --save
