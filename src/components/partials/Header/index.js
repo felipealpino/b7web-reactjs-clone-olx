@@ -2,11 +2,18 @@ import React from 'react'
 import {HeaderArea} from './styled'
 import {Link} from 'react-router-dom'
 
+import {isLogged} from '../../../helpers/AuthHandler'
+
 
 const Header = () => {
+
+    let logged = isLogged();
+
     return (<>
         <HeaderArea>
+
             <div className="container">
+
                 <div className="logo">
                     <Link to="/">
                         <span className="logo1">O</span>
@@ -17,25 +24,43 @@ const Header = () => {
                 
                 <nav>
                     <ul>
-                        <li>
-                            <Link to="">Login</Link>
-                        </li>
 
-                        <li>
-                            <Link to="">Cadastrar</Link>
-                        </li>
+                        {logged && 
+                            <>
+                                <li>
+                                    <Link to="/my-account">Minha conta</Link>
+                                </li>
+                                <li>
+                                    <Link to="/logout">Sair</Link>
+                                </li>
+                                <li>
+                                    <Link to="post-an-ad" className="button">Poste um anuncio</Link>
+                                </li>
+                            </>
+                        }
 
-                        <li>
-                            <Link to="" className="button">Poste um anuncio</Link>
-                        </li>
+                        {!logged &&
+                            <> 
+                                <li>
+                                    <Link to="/signin">Login</Link>
+                                </li>
+                                <li>
+                                    <Link to="/signup">Cadastrar</Link>
+                                </li>
+                                <li>
+                                    <Link to="/signin" className="button">Poste um anuncio</Link>
+                                </li>
+                            </>
+                        }
+
+                        
+
+                        
 
                     </ul>
-                </nav>
-            
-            
-            </div>
+                </nav> 
 
-            
+            </div>     
 
         </HeaderArea>
     </>)
