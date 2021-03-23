@@ -11,3 +11,13 @@ export const PageTitle = styled.h1`
 `
 
 export const PageBody = styled.div``
+
+
+export const ErrorMessage = styled.div`
+    margin:10px 0px;
+    background-color: #FFCACA;
+    color:black;
+    border:1px solid red;
+    padding:10px
+
+`
